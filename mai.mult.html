@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicii - Agro-X</title>
+    <link rel="stylesheet" href="mai.mult.css">
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="logo">
+        <a href="app.html">
+            <img src="poza1.png" alt="Logo Agro-X">
+        </a>
+    </div>
+    <nav class="main-nav">
+        <a href="app.html">Acasă</a>
+        <a href="proiecte.html">Proiecte</a>
+        <a href="mai.mult.html">Servicii biosecuritate</a>
+        <a href="#">Consultanță BSF</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+    <section class="top-split">
+        <div class="top-text fly-in-left">
+            <h1>Servicii de Acțiune de Urgență și Salvare Efectiv</h1>
+            <p style="color: #ffffff;">În cazul confirmării PPA, nu totul este pierdut. Agro-X aplică strategii avansate de compartimentare pentru a încerca salvarearea animalelor din zonele neatinse de virus.</p>
+        </div>
+        <div class="top-image fly-in-right">
+            <img src="poza5.jpg" alt="Echipament protectie" class="img-style-1">
+        </div>
+    </section>
+
+    <section class="blurred-section">
+        <div class="protocol-container anim-text">
+            <div class="pill-title">Strategia de Salvare și Compartimentare</div>
+            <div class="info-list">
+                <p><strong>Izolarea Focarului:</strong> Identificăm și izolăm imediat compartimentele suspecte și cele învecinate pentru a opri propagarea.</p>
+                <p><strong>Crearea de Fluxuri de Supraviețuire:</strong> Deschidem căi de acces noi, direct din exteriorul clădirii, pentru zonele contaminate, astfel încât personalul și materialele din zona afectată să nu se intersecteze cu restul fermei.</p>
+                <p><strong>Filtre Sanitare Mobile:</strong> Instalăm containere utilate (duș, vestiar) pentru personalul dedicat exclusiv zonei de izolare.</p>
+            </div>
+        </div>
+
+        <div class="protocol-container anim-text">
+            <div class="pill-title">Protocolul de "Fixare" a Virusului</div>
+            <div class="info-list">
+                <p><strong>Neutralizare Imediată:</strong> În compartimentele contaminate, după eutanasiere, efectuăm o termonebulizare de "fixare" direct pe murdar.</p>
+                <p><strong>Controlul Vectorilor:</strong> Această procedură garantează că virusul nu este transportat în zonele sănătoase de către muște, țânțari, șoareci sau prin vaporii de apă din timpul spălării.</p>
+                <p><strong>Salvare prin Monitorizare:</strong> Animalele rămase sub observație și carantină pot fi salvate dacă rezultatele de laborator rămân negative.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="image-separator-fade anim-text"></div>
+
+    <section class="top-split">
+        <div class="top-image fly-in-left">
+            <img src="poza6.jpg" alt="Servicii Biosecuritate" class="img-style-2">
+        </div>
+        <div class="top-text text-right fly-in-right">
+            <h2>Servicii Integrate de Biosecuritate și Intervenție</h2>
+            <p class="edit">Oferim suport complet pentru gestionarea focarului și pregătirea fermei pentru reluarea activității, respectând strict normele sanitar-veterinare.</p>
+        </div>
+    </section>
+
+    <section class="blurred-section">
+        <div class="protocol-container anim-text">
+            <div class="pill-title">Gestionarea Efectivului Contaminat</div>
+            <div class="info-list">
+                <p><strong>Golire și Eutanasiere:</strong> Proceduri controlate de evacuare a animalelor din zonele afectate.</p>
+                <p><strong>Logistica Cadavrelor:</strong> Asigurăm soluții de transport și neutralizare a cadavrelor, evitând deversarea sângelui infectat în canalizare sau pe suprafețele de lucru.</p>
+                <p><strong>Dezinfecție Radicală Post-Contaminare:</strong> Termonebulizare cu distribuție de 20 litri/1000m², asigurând o sterilizare completă a tuturor suprafețelor (beton, metal, lemn).</p>
+            </div>
+        </div>
+
+        <div class="protocol-container anim-text" style="margin-bottom: 20px;">
+            <div class="pill-title">Consultanță și Prevenție</div>
+            <div class="info-list">
+                <p><strong>Manual de Biosecuritate Personalizat:</strong> Elaborăm ghiduri specifice pentru fiecare fermă, incluzând proceduri de intrare, igienă și trasabilitate.</p>
+                <p><strong>Controlul Dăunătorilor:</strong> Implementăm stații de deratizare perimetrale la fiecare 15 metri și bariere fizice anti-păsări.</p>
+                <p><strong>Instruirea Personalului:</strong> Simulări practice pentru recunoașterea semnelor timpurii (febră, diaree hemoragică, letargie). Recunoașterea Timpurie a PPA (Semne de Alarmă)</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            const targets = document.querySelectorAll('.fly-in-left, .fly-in-right, .anim-text');
+            targets.forEach(t => observer.observe(t));
+        });
+    </script>
+</body>
+</html>

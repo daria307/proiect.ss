@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro-X Design</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="logo">
+        <a href="app.html">
+            <img src="poza1.png" alt="Logo Agro-X">
+        </a>
+    </div>
+    <nav class="main-nav">
+        <a href="app.html">Acasă</a>
+        <a href="proiecte.html">Proiecte</a>
+        <a href="mai.mult.html">Servicii biosecuritate</a>
+        <a href="#">Consultanță BSF</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="text-block fly-in-left">
+                <h1>Partenerul tău strategic în biosecuritate radicală și management de criză</h1>
+               <a href="mai.mult.html" class="btn-primary">Mai mult despre noi</a>
+            </div>
+            <div class="image-wrapper">
+                <div class="image-block fly-in-right">
+                    <img src="poza3.jpeg" alt="Echipa interventie" class="arch-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-us-banner" style="background-image: linear-gradient(rgba(33, 60, 45, 0.9), rgba(33, 60, 45, 0.9)), url('poza2.jpeg');">
+        <div class="banner-container">
+            <h2>Cine suntem noi?</h2>
+            <p>Într-o industrie porcină globală marcată de răspândirea implacabilă a Pestei Porcine Africane (PPA), Agro-X s-a impus ca lider în furnizarea de soluții radicale pentru supraviețuirea economică a fermelor. Cu sediul în Brașov, echipa noastră oferă expertiză bazată pe audituri și intervenții în peste 30 de ferme profesionale din România, Republica Moldova și Bulgaria.</p>
+        </div>
+    </section>
+
+    <div class="beige-bar-large">
+        <p class="anim-text">Nu lăsa Pesta Porcină să îți distrugă afacerea. Acționează înainte de primele semne!</p>
+    </div>
+
+    <section class="about-us-banner" style="background-image: linear-gradient(rgba(33, 60, 45, 0.85), rgba(33, 60, 45, 0.85)), url('poza2.jpeg');">
+        <div class="container-split">
+            <div class="split-text">
+                <h2 style="color: #d4bc8d; font-size: 2.5rem; margin-bottom: 20px;">De ce Agro-X?</h2>
+                <p><strong>Succes Dovedit:</strong> Am realizat dezinfecții radicale în 13 ferme mari (capacitate de peste 30.000 de scroafe), fără nicio recontaminare confirmată după populare.</p>
+                <br>
+                <p><strong>Tehnologie Unică în Europa:</strong> Utilizăm metode și substanțe de 38 de ori mai eficiente decât orice alți dezinfectanți comerciali.</p>
+            </div>
+            <div class="split-image">
+                <img src="poza4.jpg" alt="Utilaj Agro-X">
+            </div>
+        </div>
+    </section>
+
+    <section class="final-actions">
+        <div class="action-group align-left">
+            <h3 class="btn-asimetric btn-stanga">Management de Criză</h3>
+            <p class="action-text">
+                Suntem singurii parteneri capabili să implementeze protocoale de urgență pentru limitarea pagubelor și salvarea animalelor sănătoase, chiar și după confirmarea prezenței virusului , dar pentru asemenea rezultate .....munca începe cu mult înainte de contaminare.
+            </p>
+        </div>
+
+        <div class="action-group align-right">
+            <h3 class="btn-asimetric btn-dreapta">Prevenția</h3>
+            <p class="action-text">
+                ...este mai ieftină decât tratamentul! Investițiile în măsuri de biosecuritate economisesc bani pentru tratamente costisitoare, productivitate redusă și potențială sacrificare a animalelor.
+            </p>
+        </div>
+    </section>
+
+    <header class="main-header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="app.html">
+                <img src="poza1.png" alt="Logo Agro-X">
+            </a>
+        </div>
+        <nav class="main-nav">
+            <a href="app.html">Acasă</a>
+            <a href="proiecte.html">Proiecte</a>
+            <a href="mai.mult.html">Servicii biosecuritate</a>
+            <a href="#">Consultanță BSF</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<footer class="main-footer">
+    <div class="beige-bar-large"></div>
+</footer>
+
+    <div class="beige-bar-large" style="padding: 20px 0; height: auto;"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            const animElements = document.querySelectorAll('.fly-in-left, .fly-in-right');
+            animElements.forEach(el => observer.observe(el));
+
+            // Verifică să ai .anim-text în listă
+const targets = document.querySelectorAll('.fly-in-left, .fly-in-right, .anim-text, .action-group');
+targets.forEach(t => observer.observe(t));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+/* RESETARE ȘI SETĂRI GENERALE */
+body {
+    background-color: #284E3F; /* Verdele Agro-X */
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER (Imaginea 2) */
+.main-header { 
+    display: flex; 
+    align-items: center; 
+    padding: 0 5%; 
+    background-color: #94a79895; 
+    height: 80px; /* Înălțime mai mare pentru spațiere tip Hero */
+    
+    /* Efectul de urmărire la scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    flex: 0 0 auto; /* Logo-ul nu mai ocupă tot spațiul, lăsând navigația să se ducă la dreapta */
+}
+
+.logo img { 
+    max-width: 140px; 
+    height: auto;
+    display: block;
+}
+
+.main-nav {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; /* Împinge link-urile în extrema dreaptă */
+    padding-right: 5%;         /* Spațiu față de marginea din dreapta */
+}
+
+.main-nav a { 
+    text-decoration: none; 
+    color: #111111; 
+    margin-left: 50px; /* Spațiu între link-uri */
+    font-weight: 600; 
+    font-size: 1.1rem;
+    white-space: nowrap; 
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #ffffff; 
+}
+
+
+.hero-section { padding: 60px 8% 120px 8%; position: relative; }
+
+.hero-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    min-height: 500px; 
+    position: relative;
+}
+
+
+/* SECȚIUNEA INTRO (Imaginea 9) */
+.intro-section {
+    padding: 100px 15%;
+    text-align: center;
+}
+
+.intro-section p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* BARE BEJ (Imaginea 9 și 12) */
+.beige-bar, .final-beige-bar {
+    background-color: #d4bc8d;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.beige-bar p {
+    color: #ffffff;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.final-beige-bar {
+    height: 20px; /* Doar bara de jos */
+    padding: 0;
+}
+
+/* CARUSEL (Imaginea 9) */
+.carousel-section {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-container {
+    max-width: 800px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: none;
+}
+
+/* Săgeți Carusel */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background: rgba(0,0,0,0.3);
+    border-radius: 0 3px 3px 0;
+    transition: 0.3s;
+}
+
+.next { right: 0; border-radius: 3px 0 0 3px; }
+.prev:hover, .next:hover { background-color: #d4bc8d; }
+
+.fade { animation: fadeAnim 0.5s; }
+@keyframes fadeAnim {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* EFECTUL PARALLAX (Poza fixă - Imaginile 10, 11, 12) */
+.parallax-section {
+    /* Secretul Parallax: */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    padding: 120px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Înălțime minimă pentru secțiune */
+}
+
+.parallax-content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.parallax-content h2 {
+    color: #d4bc8d; /* Bejul Agro-X */
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+
+.parallax-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.parallax-content strong { color: #d4bc8d; }
+
+/* BARE DESPARTITOARE (Imaginea 8) */
+.beige-divider {
+    background-color: #d4bc8d;
+    height: 15px;
+}
+
+.green-divider {
+    background-color: #284E3F;
+    height: 80px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .parallax-section { background-attachment: scroll; } /* Oprim parallax pe mobil pt performanță */
+    .intro-section { padding: 50px 8%; }
+    .intro-section p { font-size: 1.2rem; }
+    .carousel-slide img { height: 300px; }
+}
+
+/* ==========================================================================
+   CARUSEL 3D (Central cu previzualizări laterale și săgeți exterioare)
+   ========================================================================== */
+
+/* Containerul principal care centrează totul (inclusiv săgețile) */
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Mai mult spațiu între poze și butoane */
+    padding: 100px 0;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Fereastra de vizualizare 3D */
+.carousel-3d {
+    width: 400px; /* Lățimea pozei centrale */
+    height: 500px; /* MODIFICAT: S-a mărit înălțimea (aici le faci lunguțe) */
+    position: relative;
+    perspective: 1500px; /* Profunzime 3D mai accentuată */
+}
+
+/* Track-ul care ține slide-urile */
+.carousel-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slide individual */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0; /* Ascuns implicit */
+    z-index: 0;
+    border-radius: 25px; /* Colțuri rotunjite */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Poza umple spațiul fără să se deformeze */
+}
+
+/* --- CLASE DE STARE (Controlate de JavaScript) --- */
+
+/* Slide-ul ACTIV (Central) */
+.slide.active {
+    opacity: 1;
+    z-index: 10;
+    transform: translateX(0) translateZ(100px) scale(1.05); /* Mai mare și mai în față */
+}
+
+/* Slide-ul PRECEDENT (Stânga - în spate) */
+.slide.prev-slide {
+    opacity: 0.4;
+    z-index: 5;
+    transform: translateX(-65%) translateZ(-150px) scale(0.8) rotateY(15deg); /* Mic, stânga, rotit */
+}
+
+/* Slide-ul URMĂTOR (Dreapta - în spate) */
+.slide.next-slide {
+    opacity: 0.4;
+    z-index: 5;
+    transform: translateX(65%) translateZ(-150px) scale(0.8) rotateY(-15deg); /* Mic, dreapta, rotit */
+}
+
+/* --- BUTOANE NAVIGARE (Săgeți exterioare) --- */
+.nav-btn {
+    background-color: #d4bc8d; /* Bejul Agro-X */
+    border: none;
+    color: white;
+    font-size: 36px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20; /* Deasupra pozelor */
+}
+
+.nav-btn:hover {
+    background-color: #ffffff;
+    color: #284E3F;
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE PENTRU MOBIL */
+@media (max-width: 900px) {
+    .carousel-3d {
+        width: 100%;
+        height: 400px; /* Mai scunde pe mobil */
+    }
+    .carousel-wrapper {
+        gap: 20px;
+        flex-wrap: wrap; /* Săgețile se pun jos pe mobile mici */
+    }
+    .slide.prev-slide, .slide.next-slide {
+        transform: scale(0.6); /* Mai mici ca să nu iasă din ecran */
+        opacity: 0.1; /* Aproape invizibile */
+    }
+}
+
+/* Animație Fly-Up */
+/* Paragraful alb */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+}
+
+/* Bandoul crem */
+.fly-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+/* Clasa pe care o adaugă JS-ul */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}

@@ -1,0 +1,276 @@
+/* ==========================================================================
+   STILURI SPECIFICE PENTRU PAGINA DE SERVICII
+   ========================================================================== */
+
+body {
+    background-color: #284E3F;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-header { 
+    display: flex; 
+    align-items: center; 
+    padding: 0 5%; 
+    background-color: #94a79895; 
+    height: 80px; /* Înălțime mai mare pentru spațiere tip Hero */
+    
+    /* Efectul de urmărire la scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    flex: 0 0 auto; /* Logo-ul nu mai ocupă tot spațiul, lăsând navigația să se ducă la dreapta */
+}
+
+.logo img { 
+    max-width: 140px; 
+    height: auto;
+    display: block;
+}
+
+.main-nav {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; /* Împinge link-urile în extrema dreaptă */
+    padding-right: 5%;         /* Spațiu față de marginea din dreapta */
+}
+
+.main-nav a { 
+    text-decoration: none; 
+    color: #111111; 
+    margin-left: 50px; /* Spațiu între link-uri */
+    font-weight: 600; 
+    font-size: 1.1rem;
+    white-space: nowrap; 
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #ffffff; 
+}
+/* 1. SECTIUNEA DE SUS / JOS (Text si Poza) */
+.top-split {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 80px 8% 20px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.top-text {
+    flex: 1.2;
+}
+
+.top-text h1, .top-text h2 {
+    color: #d2be90;
+    font-size: 3rem;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.top-text p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Modificator pentru textul aliniat la dreapta din partea a doua */
+.text-right {
+    text-align: right;
+}
+
+.top-image {
+    flex: 1;
+    text-align: center;
+}
+
+.top-image img {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Rotunjimi specifice pentru prima poza */
+.img-style-1 {
+    border-radius: 30px 0px 30px 0px; 
+    width: 350px;      /* Sau o lățime fixă, de ex: 400px */
+    height: 500px;
+}
+
+/* Rotunjimi specifice pentru a doua poza */
+.img-style-2 {
+    border-radius: 30px 0px 30px 0px; 
+    width: 350px;
+    height: 500px;
+    object-fit: cover;
+    
+    /* Aici controlezi CUM se face crop-ul */
+    object-position: center top; /* Taie din partea de jos, pastreaza susul (capetele oamenilor etc) */
+}
+
+/* 2. SECTIUNEA DE MIJLOC (Cu fundal blurat) */
+.blurred-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. SECTIUNEA SOLID GREEN (Fara fundal blurat) */
+.solid-green-section {
+    background-color: #284E3F;
+    padding: 80px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Containere Comune pentru "Pastile" si Liste */
+.protocol-container {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.pill-title {
+    background-color: #d2be90;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 20px 50px;
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); 
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.info-list p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #ffffff; /* Culoare usor mai bej pentru textul normal, ca in poza */
+}
+
+.info-list strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* 4. BARA BEJ DESPARTITOARE */
+.divider-bar {
+    background-color: #e5ddca;
+    padding: 30px 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.divider-bar h2 {
+    color: #ffffff;
+    font-style: italic;
+    font-size: 1.8rem;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .top-split {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text-right {
+        text-align: center; /* Centram pe mobil sa arate bine */
+    }
+    .top-image img {
+        border-radius: 20px; 
+    }
+}
+
+/* ==========================================================================
+   SEPARATOR IMAGINE CU PIERDERE IN FUNDAL (FADE TO GREEN)
+   ========================================================================== */
+.image-separator-fade {
+    width: 100vw; /* 100vw fortează lățimea pe tot ecranul, ignorând marginile */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+    height: 700px; /* Ajustează înălțimea pozei de aici (fă-o mai mare sau mai mică) */
+    
+    /* Secretul: Un gradient care e 100% verde sus și jos, și transparent la mijloc, suprapus peste poză */
+    background-image: 
+        linear-gradient(to bottom, #284E3F 0%, rgba(40, 78, 63, 0) 15%, rgba(40, 78, 63, 0) 85%, #284E3F 100%),
+        url('poza8.jpeg'); /* INLOCUIEȘTE cu numele corect al pozei tale cu hala în ceață */
+        
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    margin-top: 10px; 
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   ANIMAȚII (Fly-in și Fade)
+   ========================================================================== */
+
+/* Starea inițială: ascuns și deplasat */
+.fly-in-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1.2s ease-out;
+}
+
+.fly-in-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.2s ease-out;
+}
+
+.anim-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
+
+/* Starea finală: vizibil și la locul lui */
+.fly-in-left.visible, 
+.fly-in-right.visible, 
+.anim-text.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.edit {
+    color: #ffffff;
+    text-align: right;     /* Aliniază rândurile la dreapta */
+    max-width: 450px;      /* JUCĂRIA MAGICĂ: Ajustează cifra asta (400, 450, 500) până când marginea stângă a textului se aliniază cu titlul */
+    margin-left: auto;     /* Îl lipește de marginea din dreapta a ecranului */
+    line-height: 1.4;      /* Face textul mai aerisit și ușor de citit */
+    display: block;        /* Îi confirmă că este un bloc independent */
+}

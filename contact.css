@@ -1,0 +1,205 @@
+:root {
+    --dark-green: #244639;
+    --input-beige: #dcd3b6;
+    --button-brown: #a6937c;
+    --text-white: #ffffff;
+}
+
+body {
+    background-color: var(--dark-green);
+    color: var(--text-white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- HEADER (Bara de navigare) --- */
+.main-header { 
+    display: flex; 
+    align-items: center; 
+    padding: 0 5%; 
+    background-color: #94a79895; 
+    height: 80px; /* Înălțime mai mare pentru spațiere tip Hero */
+    
+    /* Efectul de urmărire la scroll */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    flex: 0 0 auto; /* Logo-ul nu mai ocupă tot spațiul, lăsând navigația să se ducă la dreapta */
+}
+
+.logo img { 
+    max-width: 140px; 
+    height: auto;
+    display: block;
+}
+
+.main-nav {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-end; /* Împinge link-urile în extrema dreaptă */
+    padding-right: 5%;         /* Spațiu față de marginea din dreapta */
+}
+
+.main-nav a { 
+    text-decoration: none; 
+    color: #111111; 
+    margin-left: 50px; /* Spațiu între link-uri */
+    font-weight: 600; 
+    font-size: 1.1rem;
+    white-space: nowrap; 
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #ffffff; 
+}
+
+/* --- SECȚIUNEA DE CONȚINUT / HERO --- */
+/* Am adăugat padding-top mare (160px) ca să nu intre formularul sub header-ul fixat */
+/* Pune asta la sfârșitul fișierului contact.css */
+.page-content {
+    display: block !important;
+    padding-top: 300px !important; /* Am pus 300px ca să observi o mutare clară */
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Dacă încă folosești clasa hero-section din codul vechi: */
+.hero-section { 
+    align-items: flex-start;
+    padding: 160px 8% 120px 8%; 
+    position: relative; 
+}
+
+.hero-container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    min-height: 500px; 
+    position: relative;
+}
+
+/* --- CONȚINUT PAGINĂ --- */
+.page-content {
+    /* Schimbă prima cifră la 120px. 
+       Asta lasă loc pentru header-ul de 80-100px și încă puțin spațiu sub el. */
+    padding: 120px 8% 40px 8% !important; 
+}
+
+.main-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 100px; /* Spațiu între formular și detalii */
+    max-width: 1400px;
+}
+
+.left-section {
+    flex: 0 0 600px; /* Lățimea formularului */
+}
+
+.header-text {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+.input-row input { flex: 1; }
+
+input, textarea {
+    background-color: var(--input-beige);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #444;
+}
+
+textarea { resize: none; min-height: 180px; }
+
+.btn-submit {
+    background-color: var(--button-brown);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+/* --- SECȚIUNEA DREAPTĂ (Detalii) --- */
+.right-section {
+    flex: 1;
+    padding-top: 90px; /* Coboară detaliile sub nivelul textului de sus */
+}
+
+.details-box h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    margin-top: 0;
+}
+
+.manager-info { margin-bottom: 25px; font-size: 1.1rem; }
+.contact-item { margin-bottom: 20px; }
+.label { display: block; color: var(--button-brown); font-weight: bold; margin-bottom: 5px; }
+
+.right-section a { color: white; text-decoration: underline; }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* 2. Fixăm spațiul de sus (fără să fie prea mult) */
+.page-content {
+    padding-top: 120px !important; /* Îl ridică mai sus sub header */
+    padding-bottom: 50px !important;
+    width: 100%;
+    box-sizing: border-box; /* Previne lărgirea paginii din cauza padding-ului */
+}
+
+/* 3. Eliminăm scroll-ul infinit */
+.main-container, .hero-section, .hero-container {
+    min-height: auto !important; /* Pagina se va opri exact unde se termină formularul */
+    height: auto !important;
+    margin-bottom: 0 !important;
+}
+
+/* 4. Ne asigurăm că rândurile de input nu ies din ecran */
+.input-row {
+    display: flex;
+    flex-wrap: wrap; /* Pe ecrane mici le pune unul sub altul să nu lărgească pagina */
+    gap: 15px;
+    width: 100%;
+}
+
+/* Responsivitate */
+@media (max-width: 1024px) {
+    .main-container { flex-direction: column; gap: 50px; }
+    .left-section { flex: 1; max-width: 100%; }
+    .right-section { padding-top: 0; }
+    .main-header { flex-direction: column; height: auto; padding: 20px; }
+    .main-nav { flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+}
